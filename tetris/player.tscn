@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dmuujvujr0uyi"]
+
+[ext_resource type="Script" uid="uid://dmynjrw1t7alw" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="PackedScene" uid="uid://dbmm0v1v4txj2" path="res://line.tscn" id="2_onrkg"]
+[ext_resource type="PackedScene" uid="uid://epvimuyttfyj" path="res://square.tscn" id="3_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://dptceusg23egx" path="res://t_piece.tscn" id="4_hqtel"]
+[ext_resource type="PackedScene" uid="uid://v64urp17d24p" path="res://s_piece.tscn" id="5_2hs0m"]
+[ext_resource type="PackedScene" uid="uid://vtrt347omnwk" path="res://z_piece.tscn" id="6_1jxqw"]
+[ext_resource type="PackedScene" uid="uid://dndxqv75r3r16" path="res://l_piece.tscn" id="7_1jxqw"]
+[ext_resource type="PackedScene" uid="uid://dd0cnxw42b5p3" path="res://j_piece.tscn" id="8_dw050"]
+
+[node name="player" type="Node3D" unique_id=2130547053]
+script = ExtResource("1_4flbx")
+Pieces = Array[PackedScene]([ExtResource("2_onrkg"), ExtResource("3_i3pqv"), ExtResource("4_hqtel"), ExtResource("6_1jxqw"), ExtResource("5_2hs0m"), ExtResource("7_1jxqw"), ExtResource("8_dw050")])
+
+[node name="Timer" type="Timer" parent="." unique_id=1927549495]
+wait_time = 0.5
+autostart = true
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=218115409]
+collision_mask = 2
+
+[connection signal="timeout" from="Timer" to="." method="fall"]

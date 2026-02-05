@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://88h8yq7fgen4"]
+
+[ext_resource type="Script" uid="uid://drqtvaw3cfgig" path="res://full_line_checker.gd" id="1_42fyp"]
+
+[node name="FullLineChecker" type="RayCast3D" unique_id=1547490698]
+target_position = Vector3(10, 0, 0)
+collision_mask = 8
+script = ExtResource("1_42fyp")

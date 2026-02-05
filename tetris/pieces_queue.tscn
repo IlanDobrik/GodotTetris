@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://yu1hwdoumc0b"]
+
+[ext_resource type="Script" uid="uid://cw5nhxw60kikl" path="res://pieces_queue.gd" id="1_u2atr"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_u2atr"]
+
+[node name="PiecesQueue" type="Node3D" unique_id=535640370]
+script = ExtResource("1_u2atr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2055094036]
+visible = false
+mesh = SubResource("SphereMesh_u2atr")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1020601238]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 1, 0)
+text = "Queue"

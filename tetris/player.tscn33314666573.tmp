@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dmuujvujr0uyi"]
+
+[ext_resource type="Script" uid="uid://dmynjrw1t7alw" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="PackedScene" uid="uid://dbmm0v1v4txj2" path="res://line.tscn" id="2_onrkg"]
+
+[node name="player" type="Node3D" unique_id=2130547053]
+script = ExtResource("1_4flbx")
+Pieces = Array[PackedScene]([ExtResource("2_onrkg")])

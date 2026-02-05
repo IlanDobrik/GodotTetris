@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://brys3ryy82vk3"]
+
+[ext_resource type="Script" uid="uid://dp7acr1femmi6" path="res://grid.gd" id="1_bgj3b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yvbsc"]
+size = Vector3(1, 1, 11)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bgj3b"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_caem6"]
+material = SubResource("StandardMaterial3D_bgj3b")
+size = Vector3(1, 1, 11)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m1vr3"]
+size = Vector3(1, 21, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ghrs3"]
+material = SubResource("StandardMaterial3D_bgj3b")
+size = Vector3(1, 21, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hdxih"]
+size = Vector3(1, 21, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wlsrv"]
+material = SubResource("StandardMaterial3D_bgj3b")
+size = Vector3(1, 21, 1)
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_bgj3b"]
+
+[node name="Bucket" type="Node3D" unique_id=252809532]
+
+[node name="Bottom" type="StaticBody3D" parent="." unique_id=736579785]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bottom" unique_id=1534164015]
+shape = SubResource("BoxShape3D_yvbsc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Bottom" unique_id=1964452355]
+mesh = SubResource("BoxMesh_caem6")
+
+[node name="Left" type="StaticBody3D" parent="." unique_id=1141394955]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 6)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Left" unique_id=961883367]
+shape = SubResource("BoxShape3D_m1vr3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Left" unique_id=1302248431]
+mesh = SubResource("BoxMesh_ghrs3")
+
+[node name="Right" type="StaticBody3D" parent="." unique_id=1531051229]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, -5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Right" unique_id=513751975]
+shape = SubResource("BoxShape3D_hdxih")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Right" unique_id=1715011813]
+mesh = SubResource("BoxMesh_wlsrv")
+
+[node name="Grid" type="Node3D" parent="." unique_id=1275095983]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Grid" unique_id=1938973034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, -4.5)
+mesh = SubResource("ImmediateMesh_bgj3b")
+script = ExtResource("1_bgj3b")

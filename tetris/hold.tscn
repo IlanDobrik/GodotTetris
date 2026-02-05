@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dixvy225ywaf1"]
+
+[ext_resource type="Script" uid="uid://o41xt5nltkmq" path="res://hold.gd" id="1_gf57l"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_gf57l"]
+
+[node name="Hold" type="Node3D" unique_id=1251783611]
+script = ExtResource("1_gf57l")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1251122374]
+visible = false
+mesh = SubResource("SphereMesh_gf57l")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1237461269]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 1, 0)
+text = "Hold"

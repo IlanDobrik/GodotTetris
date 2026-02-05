@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://epvimuyttfyj"]
+
+[ext_resource type="PackedScene" uid="uid://do55vkrsbnp5b" path="res://block.tscn" id="1_2eeqm"]
+[ext_resource type="Script" uid="uid://dsljfqnhivkhs" path="res://square.gd" id="1_5epwn"]
+
+[node name="Square" type="Node3D" unique_id=1296783007]
+script = ExtResource("1_5epwn")
+color = Color(255.0139, 255.0139, 0, 1)
+
+[node name="Block" parent="." unique_id=821337746 instance=ExtResource("1_2eeqm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="Block2" parent="." unique_id=1198418100 instance=ExtResource("1_2eeqm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 0)
+
+[node name="Block3" parent="." unique_id=82477313 instance=ExtResource("1_2eeqm")]
+
+[node name="Block4" parent="." unique_id=344955152 instance=ExtResource("1_2eeqm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)

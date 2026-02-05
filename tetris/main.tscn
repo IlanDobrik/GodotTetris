@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://b40s4o61phfw7"]
+
+[ext_resource type="PackedScene" uid="uid://brys3ryy82vk3" path="res://bucket.tscn" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://yu1hwdoumc0b" path="res://pieces_queue.tscn" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dmuujvujr0uyi" path="res://player.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dixvy225ywaf1" path="res://hold.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://b1d8p8efrp6j1" path="res://score.tscn" id="5_lquwl"]
+
+[node name="Main" type="Node3D" unique_id=683575777]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=730011485]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 2)
+projection = 1
+size = 23.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D" unique_id=1299099013]
+sky_mode = 1
+
+[node name="Bucket" parent="." unique_id=252809532 instance=ExtResource("1_h2yge")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="player" parent="." unique_id=2130547053 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
+
+[node name="PiecesQueue" parent="." unique_id=535640370 instance=ExtResource("3_1bvp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 15, 0)
+
+[node name="Hold" parent="." unique_id=1251783611 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 15, 0)
+
+[node name="Score" parent="." unique_id=1390833819 instance=ExtResource("5_lquwl")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -10, 7, 0)
+
+[connection signal="game_over" from="player" to="PiecesQueue" method="_on_player_game_over"]
+[connection signal="game_over" from="player" to="Hold" method="_on_player_game_over"]
+[connection signal="hold" from="player" to="Hold" method="_on_player_hold"]
+[connection signal="update_queue" from="player" to="PiecesQueue" method="_on_player_update_queue"]

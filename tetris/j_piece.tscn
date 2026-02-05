@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dd0cnxw42b5p3"]
+
+[ext_resource type="Script" uid="uid://b6v7b4gysx56" path="res://j_piece.gd" id="1_yeqpi"]
+[ext_resource type="PackedScene" uid="uid://do55vkrsbnp5b" path="res://block.tscn" id="2_7tntm"]
+
+[node name="JPiece" type="Node3D" unique_id=1831619769]
+script = ExtResource("1_yeqpi")
+
+[node name="Block" parent="." unique_id=1225215943 instance=ExtResource("2_7tntm")]
+
+[node name="Block2" parent="." unique_id=1779376868 instance=ExtResource("2_7tntm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="Block3" parent="." unique_id=768960818 instance=ExtResource("2_7tntm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="Block4" parent="." unique_id=1840996678 instance=ExtResource("2_7tntm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 0)
